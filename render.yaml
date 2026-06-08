@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: proyecto1
+    runtime: docker
+    plan: free
+    envVars:
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d8jk5al8nd3s73fnp4q0-a.oregon-postgres.render.com
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: proyecto1_db
+      - key: DB_USERNAME
+        value: proyecto1_db_user
+      - key: DB_PASSWO
