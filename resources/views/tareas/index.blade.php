@@ -53,9 +53,10 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit"
-                                    class="text-sm bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200">
-                                Eliminar
-                            </button>
+        onclick="return confirm('¿Estás seguro de que quieres eliminar esta tarea?')"
+        class="text-sm bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200">
+    Eliminar
+</button>
                         </form>
                     </div>
                 </div>
