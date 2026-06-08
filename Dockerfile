@@ -5,11 +5,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     zip \
     unzip \
-    git \
     && docker-php-ext-install pdo pdo_pgsql
-
-# Instalar Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Configurar Apache
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
@@ -23,11 +19,7 @@ RUN a2enmod rewrite
 WORKDIR /var/www/html
 COPY . .
 
-# Instalar dependencias
-RUN composer install --no-dev --optimize-autoloader
-
 # Permisos
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Exponer puerto
 EXPOSE 80
